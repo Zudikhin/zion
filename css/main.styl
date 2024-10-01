@@ -1,0 +1,2501 @@
+$white = #fff
+$black = #000
+
+$mainclr = #0000FF
+
+$darkbg = #1F1F1F
+$darkborder = #484848
+$fclr = #606060
+
+$tc0 = #1D1E20
+$tc1 = #1F1D1D
+$tc2 = #3F3B3C
+$tc3 = #554F4F
+
+$red = #FF0000
+
+/*==============================
+	Fonts
+==============================*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap')
+
+/*==============================
+	Common styles
+==============================*/
+body
+	font-family 'Inter'
+	background-color $white
+	font-weight 400
+	font-style normal
+
+button
+	padding 0
+	border none
+	background-color transparent
+	transition .4s ease
+	transition-property color, background, background-color, border-color, box-shadow, opacity
+	cursor pointer
+	&:focus
+		outline none
+
+a
+	text-decoration none
+	transition .4s ease
+	transition-property color, background, background-color, border-color, box-shadow, opacity
+	&:hover
+	&:active
+	&:focus
+		outline none
+		text-decoration none
+
+input
+textarea
+select
+	padding 0
+	margin 0
+	border-radius 0
+	-webkit-appearance none
+	-moz-appearance none
+	-ms-appearance none
+	appearance none
+	box-shadow none
+	transition .4s ease
+	transition-property color, border-color, box-shadow
+	&:focus
+		outline none
+
+select::-ms-expand
+	display none
+
+input::-webkit-outer-spin-button
+input::-webkit-inner-spin-button
+	-webkit-appearance none
+	margin 0
+
+ul
+	margin 0
+	padding 0
+	list-style none
+
+::-moz-selection
+	background $mainclr
+	color $white
+	text-shadow none
+::selection
+	background $mainclr
+	color $white
+	text-shadow none
+
+::-webkit-input-placeholder
+	color $tc3
+	opacity 1
+::-moz-placeholder
+	color $tc3
+	opacity 1
+:-moz-placeholder
+	color $tc3
+	opacity 1
+:-ms-input-placeholder
+	color $tc3
+	opacity 1
+
+:focus
+	outline 0 !important
+
+:focus-visible
+	outline 0 !important
+
+@media (min-width: 1400px)
+	.container
+	.container-lg
+	.container-md
+	.container-sm
+	.container-xl
+	.container-xxl
+		max-width 1170px
+
+.row--relative
+	position relative
+
+.collapse
+	width 100%
+	height 0
+	overflow hidden
+	transition height 0.35s ease
+	&.show
+		height auto
+
+/*==============================
+	Header
+==============================*/
+.header
+	position sticky
+	top 0
+	left 0
+	background-color $white
+	z-index 99
+	padding 0 16px
+	&__content
+		display flex
+		flex-direction column
+		justify-content flex-start
+		align-items center
+		width 100%
+		max-width 1392px
+		margin 0 auto
+		padding 16px 0
+	&__line
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		position relative
+		width 100%
+		height 40px
+		border-radius 12px
+		background-color #202124
+		margin-bottom 16px
+		transition .4s ease
+		transition-property transform, height, margin-bottom
+		&.hidden
+			height 0
+			transform scale(0)
+			margin-bottom 0
+	&__news
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		width auto
+		p
+			font-size 14px
+			line-height 24px
+			font-weight 600
+			color #EDEFF3
+			margin-bottom 0
+			margin-right 12px
+			&:last-child
+				margin-bottom 0
+		a
+			font-size 12px
+			line-height 24px
+			color #EDEFF3
+			text-decoration underline
+			&:hover
+				text-decoration none
+	&__line-close
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		width 20px
+		height 20px
+		position absolute
+		right 16px
+		top 50%
+		transform translateY(-50%)
+		svg
+			width 20px
+			height 20px
+			stroke #E4E7EC
+			transition stroke .4s ease
+		&:hover
+			svg
+				stroke $red
+	&__main
+		display flex
+		flex-direction row
+		justify-content space-between
+		align-items center
+		width 100%
+		height 40px
+	&__logo
+		img
+			width 112px
+			height auto
+	&__nav
+		display none
+	&__start
+		display none
+	&__btn
+		position relative
+		display flex
+		flex-direction column
+		justify-content flex-start
+		align-items flex-end
+		width 28px
+		height 19px
+		span
+			display block
+			position absolute
+			width 28px
+			height 3px
+			background-color $black
+			top 0
+			transition .4s ease
+			&:nth-child(2)
+				top 8px
+				width 21px
+			&:nth-child(3)
+				top 16px
+				width 14px
+		&.active
+			span
+				&:first-child
+					transform rotate(-45deg)
+					top 8px
+				&:nth-child(2)
+					opacity 0
+					width 0
+				&:nth-child(3)
+					width 28px
+					transform rotate(45deg)
+					top 8px
+	@media (min-width: 768px)
+		padding 0 24px
+		&__line-close
+			right 24px
+	@media (min-width: 1200px)
+		&__btn
+			display none
+		&__nav
+			display block
+			margin-right auto
+			margin-left 50px
+			.menu
+				display flex
+				flex-direction row
+				justify-content flex-start
+				align-items center
+				width auto
+			.menu-item
+				position relative
+				margin-right 32px
+				&:last-child
+					margin-right 0
+				a
+					display flex
+					flex-direction column
+					justify-content flex-start
+					align-items flex-start
+					position relative
+					width auto
+					font-size 16px
+					line-height 24px
+					height 24px
+					font-weight 500
+					color $tc1
+					white-space nowrap
+					overflow hidden
+					span
+						transition transform .4s ease
+						line-height 24px
+						color $tc1
+						will-change transform
+						&.hover-text-copy
+							color $tc2
+					&:hover
+						.hover-text
+							transform translateY(-100%)
+						.hover-text-copy
+							transform translateY(-100%)
+			.menu-item-has-children
+				position relative
+				a
+					&:first-child
+						padding-right 26px
+				&:hover
+					.sub-menu
+						opacity 1
+						visibility visible
+			.menu-item-has-children > a:after
+				content ''
+				display block
+				width 18px
+				height 18px
+				background url('../img/drop.svg') no-repeat center
+				background-size 18px 18px
+				margin-left 8px
+				position absolute
+				right 0
+				top 50%
+				transform translateY(-50%)
+			.sub-menu
+				display grid
+				grid-template-columns repeat(3, 1fr)
+				gap 20px
+				position absolute
+				list-style none
+				padding 30px
+				margin 0
+				background $white
+				top 100%
+				left 0
+				z-index 10
+				border 1px solid #C2C2C2
+				border-radius 8px
+				opacity 0
+				visibility hidden
+				transition opacity .4s ease, visibility .4s ease
+				a
+					padding-right 0 !important
+				.menu-item
+					margin-right 0
+		&__start
+			display flex
+			flex-direction row
+			justify-content center
+			align-items center
+			width 268px
+			height 40px
+			border 1px solid #505967
+			background-color $mainclr
+			border-radius 12px
+			span
+				font-size 16px
+				font-weight 500
+				color $white
+				margin-right 8px
+				&:last-child
+					margin-right 0
+			svg
+				width 24px
+				height 24px
+				fill $white
+			&:hover
+				background-color $black
+
+/*==============================
+	Sidebar
+==============================*/
+.sidebar
+	position fixed
+	display flex
+	flex-direction column
+	justify-content center
+	align-items center
+	top 128px
+	left 0
+	bottom 0
+	background-color $white
+	z-index 98
+	width 100vw
+	transform translate3d(100vw, 0, 0)
+	transition transform .4s ease
+	padding 50px 16px 100px
+	&__nav
+		margin-bottom 100px
+		.menu
+			display flex
+			flex-direction column
+			justify-content flex-start
+			align-items center
+			width auto
+			height auto
+		.menu-item
+			position relative
+			display flex
+			flex-direction column
+			justify-content flex-start
+			align-items center
+			width auto
+			margin-bottom 24px
+			.arrow-toggle
+				position absolute
+				z-index 2
+				width 18px
+				height 24px
+				right 0
+				top 0
+			&:last-child
+				margin-bottom 0
+			a
+				display flex
+				flex-direction column
+				justify-content flex-start
+				align-items flex-start
+				position relative
+				width auto
+				font-size 24px
+				line-height 24px
+				height 24px
+				font-weight 500
+				color $tc1
+				white-space nowrap
+		.menu-item-has-children > a:after
+			content ''
+			display block
+			width 18px
+			height 18px
+			background url('../img/drop.svg') no-repeat center
+			background-size 18px 18px
+			margin-left 8px
+			position absolute
+			right 0
+			top 50%
+			transform translateY(-50%)
+		.menu-item-has-children
+			position relative
+			width auto
+			a
+				&:first-child
+					padding-right 26px
+			&.active
+				.sub-menu
+					height auto
+					border-color #C2C2C2
+					margin-top 16px
+					padding 20px
+		.sub-menu
+			display grid
+			grid-template-columns repeat(2, 1fr)
+			gap 20px
+			list-style none
+			padding 0 20px
+			margin 0
+			background $white
+			border 1px solid transparent
+			border-radius 8px
+			height 0
+			overflow hidden
+			transition height .4s ease, border-color .4s ease, margin-top .4s ease, padding .4s ease
+			.menu-item
+				margin-bottom 0
+				align-items flex-start
+				a
+					font-size 18px
+					padding-right 0 !important
+	&__start
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		width 100%
+		max-width calc(100% - 32px)
+		height 50px
+		border 1px solid #505967
+		background-color $mainclr
+		border-radius 12px
+		position absolute
+		bottom 50px
+		left 50%
+		transform translateX(-50%)
+		span
+			font-size 16px
+			font-weight 500
+			color $white
+			margin-right 8px
+			&:last-child
+				margin-right 0
+		svg
+			width 24px
+			height 24px
+			fill $white
+		&:hover
+			background-color $black
+	&--active
+		transform translate3d(0, 0, 0)
+	@media (min-width: 576px)
+		&__start
+			max-width 360px
+	@media (min-width: 1200px)
+		display none
+
+/*==============================
+	Head
+==============================*/
+.head
+	position relative
+	width 100%
+	padding 30px 4px 0
+	&__content
+		display flex
+		flex-direction column
+		justify-content flex-start
+		align-items center
+		width 100%
+		&--center
+			.head__title
+				font-size 48px
+				line-height 56px
+				font-weight 700
+				letter-spacing -1px
+	&__title
+		font-size 32px
+		line-height 40px
+		font-weight 600
+		color $tc0
+		text-align center
+		margin-bottom 24px
+		&:last-child
+			margin-bottom 0
+	&__text
+		font-size 16px
+		line-height 24px
+		font-weight 400
+		color $tc2
+		text-align center
+		margin-bottom 24px
+		&:last-child
+			margin-bottom 0
+	&__link
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		width auto
+		height 50px
+		padding 0 20px
+		border-radius 12px
+		font-size 16px
+		line-height 24px
+		font-weight 500
+		background-color #202124
+		color $white
+		border 1px solid #1E3D9C
+		svg
+			margin-left 8px
+		&:hover
+			background-color $mainclr
+	@media (min-width: 768px)
+		padding 40px 4px 0
+		&__content
+			&--center
+				.head__title
+					font-size 56px
+					line-height 64px
+					letter-spacing -2px
+		&__title
+			font-size 42px
+			line-height 56px
+	@media (min-width: 992px)
+		&__content
+			&--center
+				.head__text
+					padding 0 100px
+	@media (min-width: 1200px)
+		padding 50px 4px 0
+		&__content
+			align-items flex-start
+			&--center
+				align-items center
+				.head__title
+					font-size 90px
+					line-height 90%
+					text-align center
+				.head__text
+					text-align center
+					padding 0 200px
+		&__title
+			font-size 64px
+			line-height 72px
+			letter-spacing -4px
+			text-align left
+			margin-bottom 40px
+			&:last-child
+				margin-bottom 0
+		&__text
+			margin-bottom 32px
+			text-align left
+			&:last-child
+				margin-bottom 0
+
+/*==============================
+	Breadcrumb
+==============================*/
+.breadcrumb
+	padding 0
+	list-style none
+	display flex
+	flex-direction row
+	justify-content flex-start
+	align-items flex-start
+	flex-wrap wrap
+	width auto
+	max-width 100%
+	margin-bottom 24px
+	.breadcrumb-item
+		position relative
+		padding-left 16px
+		display flex
+		flex-direction row
+		justify-content flex-start
+		align-items center
+		&:before
+			content ''
+			position absolute
+			display block
+			top 0
+			left 0
+			width 16px
+			height 24px
+			background url('../img/breadcrumb.svg') no-repeat center
+			background-size 12px 12px
+		&:first-child
+			padding-left 0
+			&:before
+				display none
+		a
+		span
+			font-size 14px
+			line-height 24px
+			text-transform uppercase
+		a
+			color $tc3
+			&:hover
+				color $mainclr
+		span
+			color #888484
+	@media (min-width: 1200px)
+		margin-bottom 16px
+
+/*==============================
+	Section
+==============================*/
+.section
+	position relative
+	width 100%
+	padding 60px 4px 0
+	&__parallax
+		position relative
+		overflow hidden
+		border-radius 16px
+		height 200px
+		width 100%
+		max-width 1392px
+		margin 0 auto
+		background-color $darkbg
+		img
+			position absolute
+			top 0
+			left 50%
+			transform translateX(-50%)
+			width auto
+			height 200%
+			will-change transform
+	&__paginations
+		display flex
+		flex-direction row
+		justify-content center
+		align-items flex-start
+		width 100%
+		margin-top 24px
+	&__carousel-title
+		font-size 32px
+		line-height 40px
+		font-weight 600
+		color $tc0
+		margin 0 auto
+		display block
+		width 100%
+		max-width 1392px
+	&__posts
+		position relative
+		width 100%
+		max-width 1392px
+		margin 24px auto 0
+	&__title
+		display flex
+		flex-direction column
+		justify-content flex-start
+		align-items flex-start
+		width 100%
+		h2
+			font-size 32px
+			line-height 40px
+			font-weight 700
+			color $tc0
+			margin-bottom 16px
+			&:last-child
+				margin-bottom 0
+		p
+			font-size 16px
+			line-height 24px
+			font-weight 400
+			color $tc2
+			margin-bottom 16px
+			&:last-child
+				margin-bottom 0
+		&--lite
+			margin-bottom 24px
+			h2
+				font-weight 400
+	&__title-btn
+		display flex
+		flex-direction row
+		justify-content space-between
+		align-items flex-end
+		width 100%
+		margin-bottom 24px
+		h2
+			font-size 32px
+			line-height 50px
+			font-weight 400
+			color $tc0
+			margin-bottom 0
+			max-width calc(100% - 160px)
+		a
+			display flex
+			flex-direction row
+			justify-content center
+			align-items center
+			width 140px
+			height 50px
+			background-color $mainclr
+			border 1px solid #626262
+			border-radius 12px
+			color $white
+			font-size 16px
+			font-weight 500
+			&:hover
+				background-color $black
+		&--tablet
+			justify-content center
+			h2
+				max-width 100%
+			a
+				display none
+	&__support-wrap
+		position relative
+		width 100%
+	&__support
+		display flex
+		flex-direction column
+		justify-content flex-start
+		align-items flex-start
+		width 100%
+		position relative
+		margin-top 40px
+		h6
+			font-size 18px
+			font-weight 700
+			color $tc2
+			margin-bottom 16px
+		p
+			font-size 16px
+			line-height 24px
+			font-weight 400
+			color $tc2
+			margin-bottom 0
+			a
+				color $tc2
+				font-weight 700
+				text-decoration underline
+				&:hover
+					text-decoration none
+	&__btn
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		width 140px
+		height 50px
+		background-color $mainclr
+		border 1px solid #626262
+		border-radius 12px
+		color $white
+		font-size 16px
+		font-weight 500
+		margin 0 auto
+		&:hover
+			background-color $black
+	@media (min-width: 768px)
+		padding 80px 4px 0
+		&__parallax
+			height 300px
+			img
+				height 180%
+		&__carousel-title
+			font-size 42px
+			line-height 50px
+		&__posts
+			margin 32px auto 0
+		&__title
+			h2
+				font-size 42px
+				line-height 50px
+			&--lite
+				margin-bottom 32px
+		&__title-btn
+			margin-bottom 32px
+			h2
+				font-size 36px
+				line-height 50px
+			&--tablet
+				justify-content space-between
+				a
+					display flex
+		&__btn
+			&--tablet
+				display none
+	@media (min-width: 992px)
+		&__support-wrap
+			height 0
+		&__support
+			margin-top 0
+			position absolute
+			transform translateY(-100%)
+	@media (min-width: 1200px)
+		padding 100px 4px 0
+		&__paginations
+			justify-content flex-end
+			&--center
+				justify-content center
+		&__parallax
+			height 350px
+			img
+				width 100%
+				height auto
+		&__carousel-title
+			font-size 50px
+			line-height 60px
+		&__posts
+			margin 40px auto 0
+		&__title
+			h2
+				font-size 50px
+				line-height 60px
+			&--lite
+				margin-bottom 40px
+		&__title-btn
+			margin-bottom 40px
+			h2
+				font-size 40px
+	@media (min-width: 1400px)
+		&__parallax
+			height 400px
+
+/*==============================
+	Sorting
+==============================*/
+.sorting
+	display flex
+	flex-direction column
+	justify-content flex-start
+	align-items flex-start
+	width 100%
+	margin-bottom 48px
+	&__group
+		display flex
+		flex-direction column
+		justify-content flex-start
+		align-items flex-start
+		position relative
+		width 100%
+		margin-bottom 24px
+		&--search
+			.sorting__input
+				padding 0 40px 0 16px
+	&__label
+		font-size 14px
+		line-height 24px
+		font-weight 400
+		color $tc3
+		margin-bottom 8px
+	&__select
+		display flex
+		flex-direction row
+		justify-content flex-start
+		align-items center
+		width 100%
+		height 46px
+		padding 0 16px
+		border-radius 4px
+		border 1px solid #F0EEEE
+		background $white
+		&:focus
+			box-shadow none
+		.ss-single
+			display flex
+			flex-direction row
+			justify-content flex-start
+			align-items center
+			height 44px
+			padding 0
+			margin 0 !important
+			color $tc3
+			font-size 14px
+			text-transform uppercase
+		.ss-arrow
+			width 10px
+			height 10px
+			margin 2px 0 0 8px
+			path
+				stroke $tc1
+				stroke-width 12
+		.ss-list
+			width 100%
+			.ss-option
+				font-size 14px
+				color $tc3
+				line-height 32px
+				text-transform uppercase
+				padding 0
+				transition .4s ease
+				&:hover
+					background-color transparent
+					color $mainclr
+				&.ss-selected
+					background-color transparent !important
+					color $mainclr !important
+		&.ss-content
+			flex-direction column
+			align-items flex-start
+			border-radius 8px
+			width 100%
+			height auto
+			padding 15px 16px
+			border 1px solid #F0EEEE
+			background $white
+			box-shadow none
+		&.ss-open-below
+			border-radius 8px !important
+	&__input
+		width 100%
+		height 46px
+		padding 0 16px
+		border-radius 4px
+		border 1px solid #F0EEEE
+		background $white
+		color $tc3
+		font-size 14px
+		text-transform uppercase
+	&__clear
+		display flex
+		flex-direction column
+		justify-content row
+		align-items row
+		position absolute
+		top 50%
+		right 16px
+		width 16px
+		height 16px
+		transform translateY(-50%)
+		z-index 1
+		pointer-events none
+		opacity 0
+		transition opacity .4s ease
+		svg
+			width 16px
+			height 16px
+			fill $tc2
+			transition fill .4s ease
+		&:hover
+			svg
+				fill $red
+		&.active
+			opacity 1
+			pointer-events auto
+	&__btn
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		width 120px
+		height 46px
+		background-color $mainclr
+		font-size 16px
+		font-weight 500
+		color $white
+		border-radius 8px
+		flex-shrink 0
+		&:hover
+			background-color $black
+	&__wrap
+		display flex
+		flex-direction row
+		justify-content space-between
+		align-items flex-start
+		width 100%
+		.sorting__group
+			max-width 300px
+			margin-bottom 0
+	&__results
+		font-size 14px
+		color $tc2
+		line-height 46px
+		flex-shrink 0
+		margin-right 24px
+	&--blog
+		flex-direction row
+		flex-wrap wrap
+		.sorting__group--search
+			width calc(100% - 144px)
+			max-width 100%
+			margin-right 24px
+	@media (min-width: 768px)
+		flex-direction row
+		align-items flex-end
+		&__group
+			margin-bottom 0
+			margin-right 24px
+			width calc((100% - 192px)/3)
+		&__wrap
+			margin-top 16px
+			.sorting__group
+				margin-right 0
+				width 300px
+
+/*==============================
+	Sortbar
+==============================*/
+.sortbar
+	display flex
+	flex-direction column
+	justify-content flex-start
+	align-items flex-start
+	width 100%
+	position relative
+	margin-bottom 48px
+	&__wrap
+		display flex
+		flex-direction column
+		justify-content flex-start
+		align-items flex-start
+		width 100%
+		position relative
+	&__applied
+		display flex
+		flex-direction column
+		justify-content flex-start
+		align-items flex-start
+		width 100%
+		position relative
+		padding 24px
+		background-color #F8F7F7
+		border-radius 8px
+		margin-bottom 24px
+		&:last-child
+			margin-bottom 0
+	&__title
+		font-size 24px
+		line-height 26px
+		font-weight 400
+		color $tc1
+		margin-bottom 0
+	&__clear-tags
+		display flex
+		flex-direction row
+		justify-content flex-start
+		align-items center
+		width 100%
+		height 26px
+		width auto
+		padding 0 8px
+		background-color #F2F2F2
+		position absolute
+		top 20px
+		right 20px
+		border-radius 4px
+		span
+			font-size 14px
+			color $tc1
+			margin-right 4px
+		svg
+			width 14px
+			height 14px
+			fill $tc1
+			transition fill .4s ease
+		&:hover
+			svg
+				fill $red
+	&__tags
+		display flex
+		flex-direction row
+		justify-content flex-start
+		align-items flex-start
+		flex-wrap wrap
+		width 100%
+		margin-top 8px
+		li
+			display flex
+			flex-direction row
+			justify-content flex-start
+			align-items flex-start
+			width auto
+			margin-top 8px
+			margin-right 8px
+			&:last-child
+				margin-right 0
+	&__tag
+		display flex
+		flex-direction row
+		justify-content flex-start
+		align-items center
+		width auto
+		height 26px
+		border-radius 4px
+		background-color #E0E0E0
+		cursor pointer
+		padding 0 8px
+		position relative
+		span
+			font-size 14px
+			line-height 24px
+			color $tc1
+			white-space nowrap
+		button
+			display flex
+			flex-direction row
+			justify-content center
+			align-items center
+			width 14px
+			height 14px
+			transform scale(0) translateY(-50%)
+			position absolute
+			top 50%
+			right 8px
+			svg
+				width 14px
+				width 14px
+				fill $white
+				transition fill .4s ease
+			&:hover
+				svg
+					fill $red
+		&:hover
+			span
+				color $mainclr
+		&.active
+			background-color $mainclr
+			padding-right 30px
+			span
+				color $white
+			button
+				transform scale(1) translateY(-50%)
+	&__categories
+		display flex
+		flex-direction column
+		justify-content flex-start
+		align-items flex-start
+		width 100%
+		position relative
+		padding 24px
+		background-color #F8F7F7
+		border-radius 8px
+		margin-bottom 24px
+		&:last-child
+			margin-bottom 0
+	&__col-btn
+		display flex
+		flex-direction row
+		justify-content space-between
+		align-items center
+		width 100%
+		svg
+			width 24px
+			height 24px
+			fill $tc3
+			transition .4s ease
+			transition-property fill, transform
+		&.show
+			svg
+				transform rotate(180deg)
+		&:hover
+			svg
+				fill $mainclr
+	&__checkboxes
+		display flex
+		flex-direction column
+		justify-content flex-start
+		align-items flex-start
+		width 100%
+		position relative
+		height auto
+		max-height 276px
+		margin-top 16px
+		padding-right 16px
+		overflow-y auto
+		li
+			position relative
+			display block
+			width 100%
+			text-align left
+			margin-bottom 12px
+			overflow hidden
+			flex-shrink 0
+			&:last-child
+				margin-bottom 0
+			input
+				&:not(:checked)
+				&:checked
+					position absolute
+					left -9999px
+				&:not(:checked) + label
+				&:checked + label
+					display flex
+					flex-direction row
+					justify-content flex-start
+					align-items center
+					width 100%
+					position relative
+					font-size 14px
+					line-height 24px
+					height 24px
+					color $tc2
+					font-weight normal
+					cursor pointer
+					padding-left 24px
+					margin 0
+					span
+						color $tc3
+						margin-left 8px
+				&:not(:checked) + label:before
+				&:checked + label:before
+					content ''
+					position absolute
+					left 0
+					top 4px
+					width 16px
+					height 16px
+					border 1px solid $tc3
+					background-color transparent
+					border-radius 4px
+				&:not(:checked) + label:after
+				&:checked + label:after
+					content ''
+					position absolute
+					left 0
+					top 4px
+					width 16px
+					height 16px
+					transition .4s ease
+					background url('../img/check.svg') no-repeat center
+					background-color $mainclr
+					background-size 12px 12px
+					border-radius 4px
+				&:not(:checked) + label:after
+					opacity 0
+					transform scale(0)
+				&:checked + label:after
+					opacity 1
+					transform scale(1)
+			label
+				&::-moz-selection
+					background transparent
+					color $tc2
+				&::selection
+					background transparent
+					color $tc2
+		&::-webkit-scrollbar
+			width 4px
+			height 4px
+		&::-webkit-scrollbar-button
+			display none
+		&::-webkit-scrollbar-thumb
+			background rgba($mainclr, .3)
+			outline 0 solid $white
+			border-radius 4px
+		&::-webkit-scrollbar-thumb:hover
+			background $mainclr
+		&::-webkit-scrollbar-track
+			background #F0EEEE
+			border-radius 4px
+	@media (min-width: 992px)
+		position absolute
+		margin-bottom 0
+		right 100%
+		margin-right 12px
+		width 296px
+		&__wrap
+			position -webkit-sticky
+			position sticky
+			top 24px
+	@media (min-width: 1200px)
+		width 356px
+		padding-right 10px
+	@media (min-width: 1400px)
+		width 366px
+		padding-right 30px
+	
+/*==============================
+	Post
+==============================*/
+.post
+	display flex
+	flex-direction column
+	justify-content flex-start
+	align-items flex-start
+	width 100%
+	margin-bottom 24px
+	&__cover
+		position relative
+		display block
+		width 100%
+		aspect-ratio 16/9
+		overflow hidden
+		border-radius 8px
+		img
+			position absolute
+			z-index 1
+			width auto
+			height auto
+			min-height 100%
+			min-width 100%
+			inset 0
+			left 50%
+			top 50%
+			transform translate(-50%,-50%)
+			object-fit cover
+			transition transform .4s ease
+		&:hover
+			img
+				transform translate(-50%,-50%) scale(1.1)
+	&__content
+		display flex
+		flex-direction column
+		justify-content flex-start
+		align-items flex-start
+		width 100%
+		padding 16px 16px 0
+	&__meta
+		display flex
+		flex-direction row
+		justify-content flex-start
+		align-items center
+		width 100%
+		margin-bottom 16px
+	&__category
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		padding 4px 8px
+		border-radius 4px
+		background-color $mainclr
+		font-size 14px
+		color $white
+		text-transform uppercase
+		&:hover
+			background-color $black
+	&__date
+		font-size 14px
+		color $tc3
+		margin-left 16px
+	&__title
+		display -webkit-box
+		-webkit-box-orient vertical
+		-webkit-line-clamp 2
+		overflow hidden
+		text-overflow ellipsis
+		font-size 24px
+		font-weight 400
+		margin-bottom 16px
+		a
+			color $tc1
+			&:hover
+				color $mainclr
+	&__text
+		font-size 16px
+		line-height 24px
+		color $tc2
+		display -webkit-box
+		-webkit-box-orient vertical
+		-webkit-line-clamp 2
+		overflow hidden
+		text-overflow ellipsis
+		margin-bottom 0
+	@media (min-width: 768px)
+		&__cover
+			aspect-ratio 1/1
+
+/*==============================
+	Recent
+==============================*/
+.recent
+	display flex
+	flex-direction column
+	justify-content flex-start
+	align-items flex-start
+	width 100%
+	&__cover
+		position relative
+		display block
+		width 100%
+		aspect-ratio 16/9
+		overflow hidden
+		border-radius 8px
+		margin-bottom 16px
+		img
+			position absolute
+			z-index 1
+			width auto
+			height auto
+			min-height 100%
+			min-width 100%
+			inset 0
+			left 50%
+			top 50%
+			transform translate(-50%,-50%)
+			object-fit cover
+			transition transform .4s ease
+		&:hover
+			img
+				transform translate(-50%,-50%) scale(1.1)
+	&__content
+		display flex
+		flex-direction column
+		justify-content flex-start
+		align-items flex-start
+		width 100%
+	&__title
+		display -webkit-box
+		-webkit-box-orient vertical
+		-webkit-line-clamp 2
+		overflow hidden
+		text-overflow ellipsis
+		font-size 24px
+		font-weight 400
+		margin-bottom 8px
+		a
+			color $tc1
+			&:hover
+				color $mainclr
+	&__date
+		font-size 14px
+		color $tc3
+
+/*==============================
+	Press
+==============================*/
+.press
+	display flex
+	flex-direction column
+	justify-content flex-start
+	align-items flex-start
+	width 100%
+	margin-bottom 24px
+	&__cover
+		position relative
+		display block
+		width 100%
+		aspect-ratio 1.34/1
+		overflow hidden
+		border-radius 8px
+		margin-bottom 16px
+		img
+			position absolute
+			z-index 1
+			width auto
+			height auto
+			max-height 100%
+			min-width 100%
+			inset 0
+			left 50%
+			top 50%
+			transform translate(-50%,-50%)
+			object-fit cover
+			transition transform .4s ease
+	&:hover
+		.press__cover
+			img
+				transform translate(-50%,-50%) scale(1.1)
+		.press__arrow
+			&:before
+				transform translateY(0)
+	&__arrow
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		width 44px
+		height 44px
+		border-radius 4px
+		position absolute
+		top 8px
+		right 8px
+		z-index 2
+		background url('../img/arrow.svg') no-repeat center
+		background-size 16px
+		background-color #F2F2F2
+		overflow hidden
+		&:before
+			content ''
+			position absolute
+			top 0
+			left 0
+			width 44px
+			height 44px
+			background url('../img/arrow--white.svg') no-repeat center
+			background-size 16px
+			background-color $mainclr
+			z-index 1
+			transform translateY(100%)
+			transition transform .4s ease
+	&__content
+		display flex
+		flex-direction column
+		justify-content flex-start
+		align-items flex-start
+		width 100%
+	&__category
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		padding 4px 8px
+		border-radius 4px
+		background-color #f2f2f2
+		font-size 14px
+		color $tc1
+		text-transform uppercase
+		margin-bottom 8px
+		&:hover
+			background-color $mainclr
+			color $white
+	&__title
+		display -webkit-box
+		-webkit-box-orient vertical
+		-webkit-line-clamp 1
+		overflow hidden
+		text-overflow ellipsis
+		font-size 24px
+		font-weight 400
+		margin-bottom 8px
+		a
+			color $tc1
+			&:hover
+				color $mainclr
+	&__text
+		font-size 16px
+		line-height 24px
+		color $tc2
+		display -webkit-box
+		-webkit-box-orient vertical
+		-webkit-line-clamp 2
+		overflow hidden
+		text-overflow ellipsis
+		margin-bottom 8px
+	&__date
+		font-size 12px
+		color $tc3
+
+/*==============================
+	Blog
+==============================*/
+.blog
+	display flex
+	flex-direction column
+	justify-content flex-start
+	align-items flex-start
+	width 100%
+	margin-bottom 24px
+	background-color #F8F7F7
+	border-radius 8px
+	&__cover
+		position relative
+		display block
+		width 100%
+		aspect-ratio 16/9
+		overflow hidden
+		border-radius 8px
+		img
+			position absolute
+			z-index 1
+			width auto
+			height auto
+			max-height 100%
+			min-width 100%
+			inset 0
+			left 50%
+			top 50%
+			transform translate(-50%,-50%)
+			object-fit cover
+			transition transform .4s ease
+	&:hover
+		.blog__cover
+			img
+				transform translate(-50%,-50%) scale(1.1)
+		.blog__arrow
+			&:before
+				transform translateY(0)
+	&__arrow
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		width 44px
+		height 44px
+		border-radius 4px
+		position absolute
+		top 8px
+		right 8px
+		z-index 2
+		background url('../img/arrow.svg') no-repeat center
+		background-size 16px
+		background-color #F2F2F2
+		overflow hidden
+		&:before
+			content ''
+			position absolute
+			top 0
+			left 0
+			width 44px
+			height 44px
+			background url('../img/arrow--white.svg') no-repeat center
+			background-size 16px
+			background-color $mainclr
+			z-index 1
+			transform translateY(100%)
+			transition transform .4s ease
+	&__content
+		display flex
+		flex-direction column
+		justify-content flex-start
+		align-items flex-start
+		width 100%
+		padding 16px
+	&__title
+		display -webkit-box
+		-webkit-box-orient vertical
+		-webkit-line-clamp 1
+		overflow hidden
+		text-overflow ellipsis
+		font-size 24px
+		font-weight 400
+		margin-bottom 8px
+		a
+			color $tc1
+			&:hover
+				color $mainclr
+	&__text
+		font-size 16px
+		line-height 24px
+		color $tc2
+		display -webkit-box
+		-webkit-box-orient vertical
+		-webkit-line-clamp 3
+		overflow hidden
+		text-overflow ellipsis
+		margin-bottom 0
+
+/*==============================
+	Case
+==============================*/
+.case
+	display flex
+	flex-direction column
+	justify-content flex-start
+	align-items flex-start
+	width 100%
+	margin-bottom 24px
+	&__cover
+		position relative
+		display block
+		width 100%
+		aspect-ratio 16/9
+		overflow hidden
+		border-radius 8px
+		img
+			position absolute
+			z-index 1
+			width auto
+			height auto
+			min-height 100%
+			min-width 100%
+			inset 0
+			left 50%
+			top 50%
+			transform translate(-50%,-50%)
+			object-fit cover
+			transition transform .4s ease
+		&:hover
+			img
+				transform translate(-50%,-50%) scale(1.1)
+	&__content
+		display flex
+		flex-direction column
+		justify-content flex-start
+		align-items flex-start
+		width 100%
+		padding 16px 16px 0
+	&__title
+		display -webkit-box
+		-webkit-box-orient vertical
+		-webkit-line-clamp 2
+		overflow hidden
+		text-overflow ellipsis
+		font-size 24px
+		font-weight 400
+		margin-bottom 16px
+		a
+			color $tc1
+			&:hover
+				color $mainclr
+	&__category
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		padding 4px 8px
+		border-radius 4px
+		background-color rgba(#33EFDF, .3)
+		font-size 14px
+		color $tc1
+		text-transform uppercase
+		&:hover
+			background-color #33EFDF
+	@media (min-width: 768px)
+		&__cover
+			aspect-ratio 1/1
+
+.case2
+	display flex
+	flex-direction column
+	justify-content flex-start
+	align-items flex-start
+	width 100%
+	margin-bottom 24px
+	&__cover
+		position relative
+		display block
+		width 100%
+		aspect-ratio 1.34/1
+		overflow hidden
+		border-radius 8px
+		margin-bottom 16px
+		img
+			position absolute
+			z-index 1
+			width auto
+			height auto
+			max-height 100%
+			min-width 100%
+			inset 0
+			left 50%
+			top 50%
+			transform translate(-50%,-50%)
+			object-fit cover
+			transition transform .4s ease
+	&:hover
+		.case2__cover
+			img
+				transform translate(-50%,-50%) scale(1.1)
+		.case2__arrow
+			&:before
+				transform translateY(0)
+	&__arrow
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		width 44px
+		height 44px
+		border-radius 4px
+		position absolute
+		top 8px
+		right 8px
+		z-index 2
+		background url('../img/arrow.svg') no-repeat center
+		background-size 16px
+		background-color #F2F2F2
+		overflow hidden
+		&:before
+			content ''
+			position absolute
+			top 0
+			left 0
+			width 44px
+			height 44px
+			background url('../img/arrow--white.svg') no-repeat center
+			background-size 16px
+			background-color $mainclr
+			z-index 1
+			transform translateY(100%)
+			transition transform .4s ease
+	&__content
+		display flex
+		flex-direction column
+		justify-content flex-start
+		align-items flex-start
+		width 100%
+	&__category
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		padding 4px 8px
+		border-radius 4px
+		background-color #f2f2f2
+		font-size 14px
+		color $tc1
+		text-transform uppercase
+		margin-bottom 8px
+		&:hover
+			background-color $mainclr
+			color $white
+	&__title
+		display -webkit-box
+		-webkit-box-orient vertical
+		-webkit-line-clamp 2
+		overflow hidden
+		text-overflow ellipsis
+		font-size 24px
+		font-weight 400
+		margin-bottom 8px
+		a
+			color $tc1
+			&:hover
+				color $mainclr
+	@media (min-width: 768px)
+		&--big
+			.case2__cover
+				aspect-ratio 16/8
+	@media (min-width: 1200px)
+		&__cover
+			aspect-ratio 16/9
+		&--big
+			.case2__cover
+				aspect-ratio 1.34/1
+
+/*==============================
+	Flyer
+==============================*/
+.flyer
+	display flex
+	flex-direction column
+	justify-content flex-start
+	align-items flex-start
+	width 100%
+	margin-bottom 24px
+	&__cover
+		position relative
+		display block
+		width 100%
+		aspect-ratio 1.34/1
+		overflow hidden
+		border-radius 8px
+		margin-bottom 16px
+		img
+			position absolute
+			z-index 1
+			width auto
+			height auto
+			max-height 100%
+			min-width 100%
+			inset 0
+			left 50%
+			top 50%
+			transform translate(-50%,-50%)
+			object-fit cover
+			transition transform .4s ease
+	&:hover
+		.flyer__cover
+			img
+				transform translate(-50%,-50%) scale(1.1)
+		.flyer__arrow
+			&:before
+				transform translateY(0)
+	&__arrow
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		width 44px
+		height 44px
+		border-radius 4px
+		position absolute
+		top 8px
+		right 8px
+		z-index 2
+		background url('../img/arrow.svg') no-repeat center
+		background-size 16px
+		background-color #F2F2F2
+		overflow hidden
+		&:before
+			content ''
+			position absolute
+			top 0
+			left 0
+			width 44px
+			height 44px
+			background url('../img/arrow--white.svg') no-repeat center
+			background-size 16px
+			background-color $mainclr
+			z-index 1
+			transform translateY(100%)
+			transition transform .4s ease
+	&__content
+		display flex
+		flex-direction column
+		justify-content flex-start
+		align-items flex-start
+		width 100%
+	&__category
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		font-size 14px
+		line-height 24px
+		color $tc3
+		text-transform uppercase
+		margin-bottom 8px
+		&:hover
+			color $mainclr
+	&__title
+		display -webkit-box
+		-webkit-box-orient vertical
+		-webkit-line-clamp 1
+		overflow hidden
+		text-overflow ellipsis
+		font-size 24px
+		font-weight 400
+		margin-bottom 0
+		a
+			color $tc1
+			&:hover
+				color $mainclr
+	&--slide
+		.flyer__title
+			-webkit-line-clamp 2
+
+/*==============================
+	Form
+==============================*/
+.b-form
+	display block
+	padding 12px
+	border 1px solid #E0E0E0
+	border-radius 8px
+	width 100%
+	margin-top 32px
+	&__group
+		position relative
+		margin-bottom 16px
+		input[type="text"]
+			width 100%
+			height 54px
+			border 1px solid transparent
+			background-color #f2f3fa
+			font-size 16px
+			color $tc2
+			border-radius 8px
+			padding 0 16px 0 40px
+			&:focus + label
+				span
+					display none
+		label
+			display flex
+			flex-direction row
+			justify-content flex-start
+			align-items center
+			width auto
+			position absolute
+			left 28px
+			top 50%
+			transform translateY(-50%)
+			cursor text
+			svg
+				width 16px
+				height 16px
+				fill $tc1
+				margin-right 8px
+			span
+				font-size 16px
+				color $tc2
+				sup
+					color $red
+					top -4px
+					font-size 14px
+					line-height 14px
+		&.filled
+			input[type="text"] + label
+				span
+					display none
+		textarea
+			width 100%
+			height 150px
+			border 1px solid transparent
+			background-color #f2f3fa
+			font-size 16px
+			color $tc2
+			border-radius 8px
+			padding 16px
+			resize none
+	&__sel
+		position relative
+		margin-bottom 16px
+	&__select
+		display flex
+		flex-direction row
+		justify-content flex-start
+		align-items center
+		width 100%
+		height 54px
+		padding 0 16px
+		border-radius 8px
+		border 1px solid transparent
+		background #f2f3fa
+		&:focus
+			box-shadow none
+		.ss-placeholder
+			padding 0 !important
+			font-size 16px
+			color $tc2 !important
+			width auto !important
+			&:after
+				content '*'
+				font-size 14px
+				line-height 14px
+				color $red
+				margin-top -4px
+				margin-left 4px
+		.ss-single
+			display flex
+			flex-direction row
+			justify-content flex-start
+			align-items center
+			height 54px
+			padding 0
+			margin 0 !important
+			color $tc2
+			font-size 16px
+		.ss-arrow
+			width 12px
+			height 12px
+			margin 2px 0 0 8px
+			path
+				stroke $tc1
+				stroke-width 12
+		.ss-list
+			width 100%
+			.ss-option
+				font-size 16px
+				color $tc2
+				line-height 32px
+				padding 0
+				transition .4s ease
+				&:hover
+					background-color transparent
+					color $mainclr
+				&.ss-selected
+					background-color transparent !important
+					color $mainclr !important
+		&.ss-content
+			flex-direction column
+			align-items flex-start
+			border-radius 8px
+			width 100%
+			height auto
+			padding 16px
+			border 1px solid #f2f3fa
+			background #f2f3fa
+			box-shadow none
+		&.ss-open-below
+			border-radius 8px !important
+	&__title
+		display block
+		width 100%
+		font-size 24px
+		line-height 32px
+		color $tc1
+		margin-top 16px
+		letter-spacing -1px
+		margin-bottom 16px
+		sup
+			color $red
+			top -4px
+	&__check
+		position relative
+		margin-bottom 16px
+		overflow hidden
+		input
+			&:not(:checked)
+			&:checked
+				position absolute
+				left -9999px
+			&:not(:checked) + label
+			&:checked + label
+				display flex
+				flex-direction row
+				justify-content flex-start
+				align-items center
+				width 100%
+				position relative
+				font-size 16px
+				line-height 24px
+				min-height 24px
+				color $tc2
+				font-weight normal
+				cursor pointer
+				padding-left 24px
+				margin 0
+				span
+					color $tc3
+					margin-left 8px
+			&:not(:checked) + label:before
+			&:checked + label:before
+				content ''
+				position absolute
+				left 0
+				top 4px
+				width 16px
+				height 16px
+				border 1px solid $tc3
+				background-color transparent
+				border-radius 4px
+			&:not(:checked) + label:after
+			&:checked + label:after
+				content ''
+				position absolute
+				left 0
+				top 4px
+				width 16px
+				height 16px
+				transition .4s ease
+				background url('../img/check.svg') no-repeat center
+				background-color $mainclr
+				background-size 12px 12px
+				border-radius 4px
+			&:not(:checked) + label:after
+				opacity 0
+				transform scale(0)
+			&:checked + label:after
+				opacity 1
+				transform scale(1)
+		label
+			&::-moz-selection
+				background transparent
+				color $tc2
+			&::selection
+				background transparent
+				color $tc2
+	&__btn
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		width 100%
+		height 48px
+		border-radius 8px
+		font-size 18px
+		font-weight 500
+		margin-top 16px
+		&--clean
+			border 1px solid #DFDFDF
+			color $tc2
+		&--color
+			background-color $mainclr
+			color $white
+		&:hover
+			background-color $black
+			color $white
+	@media (min-width: 576px)
+		padding 40px
+	@media (min-width: 768px)
+		&__title
+			font-size 32px
+			line-height 40px
+	@media (min-width: 992px)
+		margin-top 0
+
+/*==============================
+	Footer form
+==============================*/
+.f-form
+	position relative
+	display flex
+	flex-direction column
+	justify-content flex-start
+	align-items flex-start
+	width 100%
+	padding 30px
+	border-radius 24px
+	border 1px solid $darkborder
+	background-color #262626
+	margin-top 40px
+	&__text
+		font-size 14px
+		line-height 24px
+		color #A1A1A1
+		margin-bottom 20px
+	form
+		display flex
+		flex-direction column
+		justify-content flex-start
+		align-items flex-start
+		width 100%
+	&__group
+		position relative
+		width 100%
+		margin-bottom 20px
+		input[type="text"]
+			width 100%
+			height 42px
+			border 1px solid $darkborder
+			background-color $darkbg
+			font-size 14px
+			color $white
+			border-radius 8px
+			padding 0 16px
+			&::-webkit-input-placeholder
+				color #757575
+				opacity 1
+			&::-moz-placeholder
+				color #757575
+				opacity 1
+			&:-moz-placeholder
+				color #757575
+				opacity 1
+			&:-ms-input-placeholder
+				color #757575
+				opacity 1
+	input[type="submit"]
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		width 100%
+		height 42px
+		border-radius 8px
+		background-color $white
+		font-size 14px
+		color #131313
+		border none
+		outline none
+		transition .4s ease
+		&:hover
+			background-color $mainclr
+			color $white
+	@media (min-width: 768px)
+		form
+			display flex
+			flex-direction row
+		&__group
+			margin-bottom 0
+			margin-right 20px
+		input[type="submit"]
+			width 110px
+			flex-shrink 0
+
+/*==============================
+	Footer
+==============================*/
+.footer
+	position relative
+	width 100%
+	padding 0 4px
+	background-color $darkbg
+	margin-top 60px
+	&__content
+		display flex
+		flex-direction column
+		justify-content flex-start
+		align-items flex-start
+		width 100%
+		margin-top 40px
+	&__logo
+		width 124px
+		height auto
+	&__social
+		display flex
+		flex-direction row
+		justify-content flex-start
+		align-items center
+		width auto
+		margin-top 24px
+		a
+			display flex
+			flex-direction row
+			justify-content center
+			align-items center
+			width 32px
+			height 32px
+			border-radius 8px
+			border 1px solid $darkborder
+			margin-right 8px
+			background-color #303030
+			&:last-child
+				margin-right 0
+	&__cellar
+		display flex
+		flex-direction column
+		justify-content flex-start
+		align-items flex-start
+		position relative
+		width 100%
+		border-top 1px solid $darkborder
+		padding 30px 0
+		margin-top 40px
+	&__copyright
+		font-size 12px
+		line-height 24px
+		color $fclr
+		margin-bottom 16px
+	&__nav
+		display flex
+		flex-direction column
+		justify-content flex-start
+		align-items flex-start
+		width 100%
+		li
+			margin-bottom 16px
+			&:last-child
+				margin-bottom 0
+		a
+			font-size 12px
+			line-height 18px
+			color $fclr
+			&:hover
+				color $white
+	&__mail
+		position absolute
+		top 30px
+		right 0
+		font-size 16px
+		line-height 20px
+		color #A1A1A1
+		&:hover
+			color $white
+	@media (min-width: 768px)
+		margin-top 80px
+		&__cellar
+			flex-direction row
+			justify-content space-between
+		&__copyright
+			margin-bottom 0
+			margin-right 30px
+		&__nav
+			flex-direction row
+			align-items center
+			width auto
+			margin-right auto
+			li
+				margin-bottom 0
+				margin-right 30px
+				&:last-child
+					margin-right 0
+			a
+				display block
+				line-height 24px
+		&__mail
+			position relative
+			top auto
+			right auto
+			line-height 24px
+	@media (min-width: 992px)
+		padding-top 40px
+		&__cellar
+			padding 40px 0
+		&__copyright
+			margin-right 40px
+		&__nav
+			li
+				margin-right 40px
+	@media (min-width: 1200px)
+		margin-top 100px
+
+/*==============================
+	Splide
+==============================*/
+.splide
+	&__arrows
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		width auto
+		&--posts
+			margin-top 24px
+	&__arrow
+		position relative
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		width 46px
+		height 46px
+		border-radius 4px
+		background-color transparent
+		border 1px solid #F0EEEE
+		opacity 1 !important
+		transform translate(0)
+		svg
+			width 16px
+			height 16px
+			fill $tc1
+			transition fill .4s ease
+		&--next
+			right auto
+			padding-left 1px
+		&--prev
+			left auto
+			padding-right 1px
+			margin-right 10px
+			svg
+				transform scaleX(1)
+		&:hover
+			svg
+				fill $mainclr
+	&__pagination
+		position relative
+		bottom auto
+		margin-top 6px
+		padding 0
+		li
+			line-height 0
+			margin-right 10px
+			&:last-child
+				margin-right 0
+	&__pagination__page
+		margin 0
+		background-color #BFBABA
+		opacity 1
+		&.is-active
+			background-color #554F4F
+			transform scale(1)
+			opacity 1
+	@media (min-width: 768px)
+		&__arrows
+			&--posts
+				position absolute
+				right 0
+				bottom 100%
+				margin-top 0
+				margin-bottom 32px
+				width 102px
+	@media (min-width: 1200px)
+		&__arrows
+			&--posts
+				margin-bottom 40px
+
+/*==============================
+	WP paginations
+==============================*/
+.nav-links
+	display flex
+	flex-direction row
+	justify-content flex-start
+	align-items center
+	width auto
+	.page-numbers
+		display flex
+		flex-direction column
+		justify-content center
+		align-items center
+		width 46px
+		height 46px
+		border 1px solid #F0EEEE
+		border-radius 4px
+		font-size 14px
+		color $tc1
+		margin-right 4px
+		svg
+			fill $tc1
+			transition fill .4s ease
+		&:last-child
+			margin-right 0
+		&.current
+			background-color #F0EEEE
+			cursor default
+			&:hover
+				color $tc1
+		&.dots
+			cursor default
+			&:hover
+				color $tc1
+		&:hover
+			color $mainclr
+			svg
+				fill $mainclr
