@@ -282,6 +282,96 @@
 		}
 	}
 
+	// if (document.querySelector('.section--cases')) {
+	//     var elms = document.getElementsByClassName('section--cases');
+
+	//     for (var i = 0; i < elms.length; i++) {
+	//         (function(elm) {
+	//             var splide = new Splide(elm, {
+	//                 type: 'loop',
+	//                 perPage: 3,
+	//                 perMove: 1,
+	//                 drag: true,
+	//                 pagination: false,
+	//                 autoWidth: false,
+	//                 autoHeight: false,
+	//                 speed: 1200,
+	//                 gap: 0,
+	//                 arrows: true,
+	//                 focus: 'center', // Центрирование
+	//                 breakpoints: {
+	//                     991: {
+	//                         perPage: 1,
+	//                         perMove: 1,
+	//                         focus: 0,
+	//                     },
+	//                 }
+	//             }).mount();
+
+	//             // Функция для сброса всех активных классов
+	//             function clearActiveClasses() {
+	//                 splide.Components.Elements.slides.forEach(function(slide) {
+	//                     slide.classList.remove('active-one', 'active-two', 'active-three');
+	//                 });
+	//             }
+
+	//             // Функция для расставления классов в соответствии с индексом
+	//             function assignActiveClasses(index) {
+	//                 const slides = splide.Components.Elements.slides;
+	//                 const totalSlides = slides.length;
+
+	//                 // Расставляем классы
+	//                 if (slides[index]) {
+	//                     slides[index].classList.add('active-one'); // Центральный слайд
+	//                 }
+	//                 if (slides[(index - 1 + totalSlides) % totalSlides]) {
+	//                     slides[(index - 1 + totalSlides) % totalSlides].classList.add('active-two'); // Слайд слева
+	//                 }
+	//                 if (slides[(index + 1) % totalSlides]) {
+	//                     slides[(index + 1) % totalSlides].classList.add('active-three'); // Слайд справа
+	//                 }
+	//             }
+
+	//             // Событие 'move': срабатывает при начале перелистывания
+	//             splide.on('move', function(newIndex) {
+	//                 clearActiveClasses(); // Очищаем классы перед началом движения
+	//                 assignActiveClasses(newIndex); // Присваиваем классы
+	//             });
+
+	//             // Событие 'mounted': назначаем начальные классы после монтирования
+	//             splide.on('mounted', function() {
+	//                 assignActiveClasses(splide.index); // Изначальные классы
+	//             });
+
+	//             // Функция дебаунса для обновления слайдера
+	//             function debounce(func, wait) {
+	//                 let timeout;
+	//                 return function () {
+	//                     const context = this;
+	//                     const args = arguments;
+	//                     clearTimeout(timeout);
+	//                     timeout = setTimeout(() => func.apply(context, args), wait);
+	//                 };
+	//             }
+
+	//             const debouncedRefresh = debounce(() => {
+	//                 splide.refresh();
+	//             }, 100);
+
+	//             // Наблюдатель за изменениями размера экрана
+	//             const resizeObserver = new ResizeObserver(() => {
+	//                 splide.Components.Elements.track.style.transition = "none";
+	//                 debouncedRefresh();
+	//                 setTimeout(() => {
+	//                     splide.Components.Elements.track.style.transition = "";
+	//                 }, 150);
+	//             });
+
+	//             resizeObserver.observe(elm.parentElement);
+	//         })(elms[i]);
+	//     }
+	// }
+
 	/*==============================
 	Parallax
 	==============================*/
